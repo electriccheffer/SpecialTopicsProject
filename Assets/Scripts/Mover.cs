@@ -25,6 +25,7 @@ public class Mover : MonoBehaviour
 	}
 	if(Input.GetKey(KeyCode.S)){
 		this.transform.position += -this.transform.forward * accellerationConstant;
+		Debug.Log("S Key Pressed Moving Backward");
 	}
 	if(Input.GetKey(KeyCode.UpArrow)){
 		this.transform.Rotate(-xRotation);
@@ -50,7 +51,7 @@ public class Mover : MonoBehaviour
 		this.transform.Rotate(zRotation); 
 		Debug.Log("Left Shift Pressed Rotation Left");
 	}
-		        	        
+	this.transform.position += this.transform.forward * accellerationConstant; 		        	        
     }
 
 }
