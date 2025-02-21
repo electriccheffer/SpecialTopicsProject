@@ -22,6 +22,7 @@ public class ParticleSensor : MonoBehaviour
 	if(enemy.gameObject.name.StartsWith("Aircraft")){
 		
 		Debug.Log("Collision! With sense sphere"); 
+		transform.parent.Find("ObservationPoint").GetComponent<TurretFacer>().FaceTarget(enemy.gameObject); 			
 	}
     }
 }
