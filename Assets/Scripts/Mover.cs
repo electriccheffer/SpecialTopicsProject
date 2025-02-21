@@ -20,7 +20,7 @@ public class Mover : MonoBehaviour
     void Update()
     {
 	if(Input.GetKey(KeyCode.W)){
-		this.transform.position += this.transform.forward * accellerationConstant; 
+		this.transform.position += this.transform.forward * accellerationConstant * 4; 
 		Debug.Log("W Key Pressed Moving Forward");
 	}
 	if(Input.GetKey(KeyCode.S)){
