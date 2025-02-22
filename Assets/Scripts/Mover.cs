@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 { 
-    public float accellerationConstant = .1f; 
-    public float rotationConstant = .5f; 
+    public float accellerationConstant = .5f; 
+    public float rotationConstant = 1.5f; 
     Vector3 yRotation; 
     Vector3 zRotation; 
     Vector3 xRotation; 
