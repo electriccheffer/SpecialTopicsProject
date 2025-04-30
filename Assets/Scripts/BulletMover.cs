@@ -36,4 +36,10 @@ public class BulletMover : MonoBehaviour
 	this.velocity = (target.transform.position - this.transform.position).normalized;	
 	Debug.Log("The velocity is " + this.velocity );
     }
+
+    public void SetDirection(Vector3 direction){
+
+	this.velocity = direction; 
+
+    }
 }
