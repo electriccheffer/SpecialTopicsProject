@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class TrackerDetectionSphere : MonoBehaviour
 {
-    [SerializeField] GameObject trackerBullet; 
+    [SerializeField] GameObject trackerBullet;
+    [SerializeField] GameObject currentBullet; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,13 +19,17 @@ public class TrackerDetectionSphere : MonoBehaviour
 
     void OnTriggerEnter(Collider enemy){
 
-	if(enemy.gameObject.name.StartsWith("Aircraft")){
+	if(this.currentBullet == null){
+
+		Destroy(this.currentBullet); 
+	}	
+		
+	if(enemy.gameObject.name.StartsWith("Aircraft") ){
 		//
 		Debug.Log("Collision! With TrackerDetectionSphere");
 	
-		Instantiate(trackerBullet);
-		trackerBullet.GetComponent<TrackerBulletMover>().setTarget(enemy.gameObject);	
-		Destroy(gameObject); 
+		this.currentBullet = Instantiate(trackerBullet);
+		this.currentBullet.GetComponent<TrackerBulletMover>().setTarget(enemy.gameObject);	
 	}
 	
     } 
