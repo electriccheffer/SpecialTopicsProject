@@ -24,6 +24,7 @@ public class TrackerDetectionSphere : MonoBehaviour
 	
 		Instantiate(trackerBullet);
 		trackerBullet.GetComponent<TrackerBulletMover>().setTarget(enemy.gameObject);	
+		Destroy(gameObject); 
 	}
 	
     } 
