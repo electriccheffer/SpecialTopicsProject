@@ -27,12 +27,16 @@ public class TrackerBulletMover : MonoBehaviour
     }
 
     void FixedUpdate(){
+	if(this.target != null){
 
-	this.timeAlive += Time.deltaTime; 
-	if(this.timeAlive >= this.timeToLive){
+		this.timeAlive += Time.deltaTime; 
+		if(this.timeAlive >= this.timeToLive){
 	
-		Destroy(gameObject); 
-	}	
+			Destroy(gameObject); 
+		}
+
+	}
+		
 		
 	// calculate the velocity vector based on the current position of bullet and target.  Normalize it. 
 	if(this.target != null && this.upwardMovementTime <= this.timeAlive){
